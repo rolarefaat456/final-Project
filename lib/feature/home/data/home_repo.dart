@@ -34,6 +34,7 @@ class HomeRepo {
         endPoint:
             '$places?$categories=$categoryType&filter=circle:$lon,$lat,$radius&limit=20&apiKey=$key',
       );
+      print(response);
       if (response.isNotEmpty) {
         final features = response['features'] as List? ?? [];
         return features.map((e) => PlaceModel.fromJson(e)).toList();

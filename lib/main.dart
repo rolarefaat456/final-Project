@@ -1,7 +1,6 @@
+import 'package:finalpro/feature/home/presentation/manager/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:provider/provider.dart';
-import 'feature/home/presentation/manager/home_provider.dart';
 import 'feature/home/presentation/view/home_view.dart';
 import 'feature/likes/presentation/view/likes_view.dart';
 import 'feature/notification/presentation/view/notification_view.dart';
@@ -9,12 +8,8 @@ import 'feature/profile/presentation/view/profile_view.dart';
 import 'feature/search/presentation/view/search_view.dart';
 
 void main() {
-  runApp(
-        ChangeNotifierProvider<HomeProvider>(
-          create: (context) => HomeProvider(),
-          child: const MyApp(),
-    ),
-  );
+  Get.put(HomeController());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
